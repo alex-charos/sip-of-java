@@ -2,16 +2,33 @@
 
 <html>
     <body onload="rotateIframe()">
-        <iframe id="iframe"  style="position:fixed; top:0; left:0; bottom:0; right:0; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;"></iframe>
+        <iframe id="iframe" src="005-local-record" style="position:fixed; top:0; left:0; bottom:0; right:0; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;"></iframe>
 
         <script>
+            var arr = ["001-switch-expression", "002-instanceof", "003-single-file", "004-text-block", "005-local-record"];
+            var rotation = 3000;
             function rotateIframe() {
-                var arr = ["001-switch-expression", "002-instanceof"];
-              for (var i=0;i<arr.length;i++) {
-                    document.getElementById("iframe").src=arr[i];
-                    sleep(10000);
+                for (var i=0;i<arr.length;i++) {
+                    test(i);
+                }
+                //we're done here, schedule a refresh to start over 
+                setTimeout(()=>location.reload(), rotation*arr.length);
 
-              }
+            }
+            
+
+            
+
+
+
+            async function test(i) {
+                await delay(rotation*i);
+                document.getElementById("iframe").src=arr[i] ;
+                console.log('after 1 second');
+            }
+            
+            function delay(time) {
+                return new Promise(resolve => setTimeout(resolve, time));
             }
         </script>
     </body>
