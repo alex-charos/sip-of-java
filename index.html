@@ -1,7 +1,6 @@
+<!DOCTYPE html>
+
 <html>
-    <head>
-        <title>Sip of Java Rotator</title>
-    </head>
     <body onload="rotateIframe()">
         <iframe id="iframe"></iframe>
 
@@ -10,15 +9,11 @@
                 var arr = ["test", "test2"];
               for (var i=0;i<arr.length;i++) {
                     document.getElementById("iframe").src=arr[i];
-                    await sleep(i * 10000);
+                    sleep(10000);
 
               }
             }
-
-            function sleep(ms) {
-               return new Promise(resolve => setTimeout(resolve, ms));
-            }
-            </script>
+        </script>
     </body>
 
 </html>
