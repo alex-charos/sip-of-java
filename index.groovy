@@ -1,4 +1,14 @@
+ def commastring = "" 
+    dh = new File('.')
+    dh.eachFile {
+        
+        if (it.name.startsWith("0")) {
+            commastring = commastring +  "\"" + it.name + "\", "
+        }
+    }
+    commastring = commastring.substring(0, commastring.length()-2);
 
+def template = """
 <!DOCTYPE html>
 
 <html>
@@ -6,7 +16,7 @@
         <iframe id="iframe" src="005-local-record" style="position:fixed; top:0; left:0; bottom:0; right:0; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;"></iframe>
 
         <script>
-            var arr = [ "004-text-block", "008-upgrade-runtime", "001c-switch-expression-yield", "016-scanner-tokenize", "003-single-file", "012-read-file-improvements", "009-string-join", "018-record-serialization-libraries", "006-collection-factory", "013-javadoc", "017-streams-updates", "007-string-enhancements", "011-jfr", "005-local-record", "002-instanceof", "015-record-projections", "014-scanner", "001c-switch-expression-block-cases", "001b-switch-expression-returning-value", "001-switch-expression", "010-unix-sockets", "001d-switch-expression-exhaustiveness"];
+            var arr = [ ${commastring}];
             var rotation = 15000;
             function rotateIframe() {
                 for (var i=0;i<arr.length;i++) {
@@ -35,3 +45,10 @@
     </body>
 
 </html>
+"""
+
+println template;
+
+    File file = new File("index.html")
+    file.write template;
+    println file.text
