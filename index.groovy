@@ -47,8 +47,7 @@ def template = """
 </html>
 """
 
-println template;
-
+    println template;
     File file = new File("index.html")
     file.write template;
 
