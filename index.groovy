@@ -51,4 +51,5 @@ println template;
 
     File file = new File("index.html")
     file.write template;
+
     println file.text
