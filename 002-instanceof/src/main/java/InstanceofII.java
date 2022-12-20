@@ -4,11 +4,11 @@ public class InstanceofII {
 		Object actuallyAString = "I'm actually a string!";
 		
 		if(!(actuallyAString instanceof String nowImAString)) {
-			nowImAString = "";
+		//	nowImAString = "";
 		} else {
-			nowImAString = "";
+		//	nowImAString = "";
 		}
-		System.out.println(nowImAString);
+		//System.out.println(nowImAString);
 	}
 
 }

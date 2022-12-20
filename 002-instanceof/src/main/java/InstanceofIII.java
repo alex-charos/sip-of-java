@@ -7,11 +7,11 @@ public class InstanceofIII {
 			System.out.println(nowImAString);
 		}
 		
-		System.out.println(nowImAString);
+		//System.out.println(nowImAString);
 		
-		boolean isAString = (actuallyAString instanceof String nowImAString);
+		//boolean isAString = (actuallyAString instanceof String nowImAString);
 
-		System.out.println(nowImAString);
+		//System.out.println(nowImAString);
 	}
 
 }

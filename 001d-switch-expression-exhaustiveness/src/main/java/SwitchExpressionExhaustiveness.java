@@ -1,4 +1,4 @@
-public class SwitchExpressionV {
+public class SwitchExpressionExhaustiveness {
 	
 	enum DaysOfWeek {
 		SUNDAY, MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY ;

@@ -11,6 +11,9 @@
 
 	<modules>
 		<module>001-switch-expression</module>
+		<module>001b-switch-expression-returning-value</module>
+		<module>001c-switch-expression-yield-and-block-cases</module>
+		<module>001d-switch-expression-exhaustiveness</module>
 		<module>002-instanceof</module>
 		<module>003-single-file</module>
 		<module>004-text-block</module>
